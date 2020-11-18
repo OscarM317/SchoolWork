@@ -17,11 +17,11 @@ var i
 
 function decItems (){
 
-For (i=0; i < produce.length; i++) {
+for (i=0; i < produce.length; i++) {
 
-            Var listItem = "<li>" + i + ": " + produce[i] + "</li>";
+            var listItem = "<li>" + i + ": " + produce[i] + "</li>";
 
-listCode+=listItem;
+            listCode+=listItem;
 
   }
 
@@ -51,7 +51,7 @@ function updateCode (codeType){
 
     unorderedList = "<p>"+ codeType + "</p><ul>" + listCode + "</ul>";
 
-    return display.innerHTML = unorderedList;
+    return display = unorderedList;
 
 }
 
