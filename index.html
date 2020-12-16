@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Validation and Regular Expressions</title>
+  <style media="screen">
+    label {
+      padding: 10px;
+    }
+    input {
+      width: 30em;
+    }
+    button {
+      display: block;
+      margin: 10px 5px;
+    }
+  </style>
+</head>
+<body>
+  <form action="index.html" name="simplePassword" onsubmit="return(validatePassword())">
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Must be at least 6 characters, including one number, one lowercase and one uppercase letter.">
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <script type="text/javascript">
+    function checkPassword(str) {
+      var strength = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+      return checkPassword.test(str);
+    }
+    function validatePassword() {
+      if(document.simplePassword.password.value == "") {
+        if(!checkPassword(document.simplePassword.password.value)) {
+          alert("The password entered is not valid!");
+          document.simplePassword.password.focus();
+          return false;
+        }
+      }
+    return true;
+  }
+  </script>
+</body>
+</html>
